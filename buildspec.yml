@@ -11,6 +11,8 @@ phases:
     commands:
       - pip install mkdocs
       - mkdocs build
+      - pip install awscli
+      - aws s3 cp site s3://bucket-man/ --recursive
   post_build:
     commands:
       - echo Build completed on `date`
